@@ -5,7 +5,7 @@ echo "Paketlisten werden upgedatet.."
 apt update -y
 apt upgrade -y
 apt install -y  tree neofetch 
-sleep2
+sleep 2
 
 echo " User werden erstellt"
 useradd -m hao
@@ -28,33 +28,31 @@ mkdir -p  /home/hao/Party/Personal/Zeiten
  
 mkdir -p  /home/hao/Party/.Geheimakten/Log
 
-echo "Passwort lautet abc123" >> /home/hao/Party/Credentails/Passwort.txt
+echo "Passwort lautet abc123" >> /home/hao/Party/Credentials/Passwort.txt
 echo "hao:abc123" | chpasswd
 
-
-mkdir  /home/xinzhao/credentails
-echo "Passwort lautet abc123" >> /home/xinzhao/Credentails/Passwort.txt
+mkdir  /home/xinzhao/credentials
+echo "Passwort lautet abc123" >> /home/xinzhao/Credentials/Passwort.txt
 echo "xinzhao:abc123" | chpasswd
 
+mkdir  /home/xiaomi/Credentials
 
-mkdir  /home/xiaomi/Credentails
-
-echo "Passwort lautet abc123" >> /home/xiaomi/Credentails/log.txt
+echo "Passwort lautet abc123" >> /home/xiaomi/Credentials/log.txt
 echo "xiaomi:abc123" | chpasswd
 
-sleep2
+sleep 2
 echo "setze Cronjob ein" 
  
-sleep2
+sleep 2
 
-echo  "*/15 * * * * ps aux >> tail -12 /home/hao/Party/.Geheimkarten/log1.txt"
+echo  "*/15 * * * * ps aux | tail -12 >> /home/hao/Party/.Geheimkarten/log1.txt" |crontab -u hao
 
 echo " setze Alias ein"
 
-echo "alias lsla=ls-la" >> /home/bash.bash.rc 
+echo "alias lsla=ls-la" >> /home/hao/.bashrc 
 
 
-sleep2
+sleep 2
 
 #informiere User
 
