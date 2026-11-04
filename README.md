@@ -19,4 +19,5 @@ Ein umfassendes Bash-Skript zur automatisierten Administration und Konfiguration
 
 1. Skript ausführbar machen:
 ```bash
-chmod +x klausur.sh
+chmod +x setup-system.sh
+sudo ./setup-system.sh
